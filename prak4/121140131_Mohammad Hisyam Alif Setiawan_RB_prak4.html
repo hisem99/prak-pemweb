@@ -1,0 +1,80 @@
+<!--Mohammad Hisyam Alif Setiawan-->
+<!--121140131-->
+<!--RB-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- web title -->
+    <title>Prak 4</title>
+  </head>
+  <link rel="stylesheet" href="style0.css">
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- judul web -->
+      <h1>Kalkulator ganjil genap</h1>
+    </header>
+
+    <!-- konten utama -->
+    <main>
+      <label for="bilangan">Masukan bilangan positif: </label>
+      <input type="number" name="bilangan" id="bilangan" />
+      <button type="button" onclick="ganjilGenap()">Kirim</button>
+
+      <!-- menampilkan hasil -->
+      <div class="hasil">
+        <!-- <p id="bilGanjil"></p>
+        <br />
+        <p id="bilGenap"></p> -->
+        <div id="bilGanjil"></div>
+        <div id="bilGenap"></div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <p>© all right reserved</p>
+    </footer>
+
+    <!-- kode JS -->
+    <script>
+      function ganjilGenap() {
+        // declare var untuk menampung bilangan yg akan dihitung
+        let bil = parseInt(document.getElementById("bilangan").value);
+
+        // jika bilangan bukan bil positif (< 0)
+        if (bil < 0) {
+          alert(
+            "Bilangan yg dimasukan salah, silahkan masukan bilangan positif!"
+          );
+        }
+        //   jika bilangan adalah bil positif (< 0)
+        else {
+          // declare var penampung bil ganjil & genap
+          let ganjil = 0;
+          let genap = 0;
+          // perulangan untuk menghitung bil ganjil & genap
+          for (let i = 1; i <= bil; i++) {
+            if (i % 2 == 0) {
+              genap++;
+            } else {
+              ganjil++;
+            }
+          }
+          // menampilkan hasil perhitungan bil ganjil & genap
+          document.getElementById(
+            "bilGanjil"
+          ).textContent = `Jumlah Bilangan ganjil: ${ganjil}`;
+
+          document.getElementById(
+            "bilGenap"
+          ).textContent = `Jumlah Bilangan genap: ${genap}`;
+        }
+      }
+    </script>
+  </body>
+</html>
